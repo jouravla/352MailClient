@@ -59,7 +59,32 @@ public class ClientInterface extends JFrame {
 				return;
 			}
 			
-
+//			/* Create the message */
+//			Message mailMessage = new Message(fromField.getText(), toField.getText(), subjectField.getText(), messageText.getText());
+//
+//			/* Check that the message is valid, i.e., sender and recipient addresses look ok. */
+//			if(!mailMessage.isValid()) {
+//				return;
+//			}
+//
+//			/* Create the envelope, open the connection and try to send
+//	       the message. */
+//			try {
+//				Envelope envelope = new Envelope(mailMessage, 
+//						serverField.getText());
+//			} catch (UnknownHostException e) {
+//				/* If there is an error, do not go further */
+//				return;
+//			}
+//			try {
+//				SMTPConnection connection = new SMTPConnection(envelope);
+//				connection.send(envelope);
+//				connection.close();
+//			} catch (IOException error) {
+//				System.out.println("Sending failed: " + error);
+//				return;
+//			}
+//			System.out.println("Mail sent successfully!");
 		}
 	}
 
