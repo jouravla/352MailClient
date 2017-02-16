@@ -6,12 +6,10 @@ public class Email {
 	public String message;
 	
 	public Email(String to, String from, String sub, String mes){
-		sender = to;
-		recipient = from;
+		//trim any problematic whitespace in the emails
+		sender = to.trim();
+		recipient = from.trim();
 		subject = sub;
 		message = mes;
 	}
-	
-	//have to check if sender/recipient is valid
-	//need to screen message for escapes
 }
