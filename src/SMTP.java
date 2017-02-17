@@ -2,6 +2,7 @@ import java.io.*;
 import java.net.*;
 
 /**
+ * This is an SMTP that utilizes TCP elements.
  * @author Sasha Jouravlev
  */
 class SMTP {
@@ -13,6 +14,7 @@ class SMTP {
 	private static final int PORT = 778;
 	private static final String carRet = "\r\n";
 
+	//TODO: implement specialized errors at each stage of the process (out of scope for this HW)
 	public SMTP(Email email)throws Exception{
 		//Establish a TCP connection with the mail server.
 		clientSocket = new Socket("172.16.223.21", PORT);

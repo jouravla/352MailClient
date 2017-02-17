@@ -1,4 +1,8 @@
-
+/**
+ * This class is a simple representation of an email.
+ * @author Sasha Jouravlev
+ *
+ */
 public class Email {
 	public String sender;
 	public String recipient;

@@ -1,15 +1,15 @@
-import java.io.*;
-import java.net.*;
 import javax.swing.JFrame;
 import java.awt.*;
 import java.awt.event.*;
 
 
 /**
+ * This is a simple GUI for the user to input their information
+ * @author Sasha Jouravlev
  *
  */
 public class ClientInterface extends JFrame {
-
+	//the appropriate parts of the GUI
 	private Label senderLabel = new Label("From:");
 	private TextField sender = new TextField("", 20);
 	private Label recipientLabel = new Label("To:"); 
@@ -20,10 +20,7 @@ public class ClientInterface extends JFrame {
 	private TextArea message = new TextArea(10, 40);
 
 	private Button sendButton = new Button("Send");
-	/**
-	 * Create a new MailClient window with fields for entering all
-	 * the relevant information (From, To, Subject, and message).
-	 */
+	
 	public ClientInterface() {
 		super("Java Mailclient");
 		Panel mainPanel = new Panel();
@@ -52,6 +49,7 @@ public class ClientInterface extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
+	//the listener for the send click
 	class SendListener implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 			if((sender.getText()).equals("") || recipient.getText().equals("") || subject.getText().equals("")) {
@@ -60,6 +58,8 @@ public class ClientInterface extends JFrame {
 			}
 
 			Email email = new Email(sender.getText(), recipient.getText(), subject.getText(), message.getText());
+			
+			//surrounded by a try catch in case specialized errors wanted to be implemented
 			try {
 				SMTP blah = new SMTP(email);
 			} catch (Exception error) {
